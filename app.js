@@ -12,7 +12,12 @@ mongoose.connect(process.env.MONGO_DB_URI, {
 //config Route
 const roomRoutes = require("./routes/rooms");
 const authRoute = require("./routes/auth");
-app.use("/api/rooms",roomRoutes);
+const dataroomRoute = require("./routes/dataroom_routes");
+const datatoolRoute = require("./routes/datatool_routes");
+
+app.use("/api/dr",dataroomRoute);
+app.use("/api/dt",datatoolRoute);
+app.use("/api/",roomRoutes);
 app.use("/api/auth",authRoute);
 
 const PORT = process.env.PORT || 3000;

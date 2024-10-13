@@ -3,7 +3,6 @@ const roomSchema = new mongoose.Schema({
     date_time: { type: Date, required: true },
     time_in: { type: String, required: false }, // Consider using Date type
     time_out: { type: String, required: false}, // Consider using Date type
-    building_name: { type: String, required: false },
     room_name: { type: String, required: false },
     user_name: { type: String, required: false },
     phone: { type: String, required: false },

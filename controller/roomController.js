@@ -1,6 +1,6 @@
 const Room = require("../models/room");
 
-exports.getRoom = async (req, res) => {
+exports.getRooms = async (req, res) => {
     try {
         const rooms = await Room.find();
         res.status(200).json(rooms);
@@ -21,8 +21,8 @@ exports.getRoomID = async (req, res) => {
 
 exports.postRoom = async (req, res) => {
     try {
-        const { date_time, time_in, time_out, building_name,room_name,user_name,phone,objective,adviser } = req.body;
-        const room = new Room({ date_time, time_in, time_out, building_name,room_name,user_name,phone,objective,adviser });
+        const { date_time, time_in, time_out,room_name,user_name,phone,objective,adviser } = req.body;
+        const room = new Room({ date_time, time_in, time_out,room_name,user_name,phone,objective,adviser });
         const savedRoom = await room.save();
         res.status(201).json(savedRoom);
     } catch (err) {
